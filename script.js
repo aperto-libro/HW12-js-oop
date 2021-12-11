@@ -26,6 +26,8 @@ class Clock {
 
 let time = document.getElementById('clock');
 let clock = new Clock(time);
+
+clock.render();
 setInterval(() => clock.render(), 250);
 
 // вторые часы
