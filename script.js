@@ -6,13 +6,15 @@ class Clock {
   }
 
   render() {
-    this.now = new Date();
-    this.hours = this.correctTime(this.now.getHours());
-    this.minutes = this.correctTime(this.now.getMinutes());
-    this.seconds = this.correctTime(this.now.getSeconds());
-    this.el.innerHTML = this.isFullFormat
-      ? `${this.hours} : ${this.minutes} : ${this.seconds}`
-      : `${this.hours} : ${this.minutes}`;
+    this.el.innerHTML = this.getTime();
+  }
+
+  getTime() {
+    const now = new Date();
+    const hours = this.correctTime(now.getHours());
+    const minutes = this.correctTime(now.getMinutes());
+    const seconds = this.correctTime(now.getSeconds());
+    return this.isFullFormat ? `${hours} : ${minutes} : ${seconds}` : `${hours} : ${minutes}`;
   }
 
   toggleFormat() {
